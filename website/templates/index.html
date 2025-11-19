@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Heart Disease Predictor</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title">
+            Heart Disease Predictor
+        </div>
+        <form action="/predict" method="POST">
+            
+            <!-- Numeric fields -->
+            <div class="inputfield">
+                <label for="Age">Age</label>
+                <input type="number" class="input" name="Age" required>
+            </div>
+
+            <div class="inputfield">
+                <label for="Blood_Pressure">Blood Pressure</label>
+                <input type="number" class="input" name="Blood_Pressure" required>
+            </div>
+
+            <div class="inputfield">
+                <label for="Cholesterol_Level">Cholesterol Level</label>
+                <input type="number" class="input" name="Cholesterol_Level" required>
+            </div>
+
+            <div class="inputfield">
+                <label for="BMI">BMI</label>
+                <input type="number" class="input" name="BMI" required>
+            </div>
+
+            <div class="inputfield">
+                <label for="Sleep_Hours">Sleep Hours</label>
+                <input type="number" class="input" name="Sleep_Hours" required>
+            </div>
+
+            <div class="inputfield">
+                <label for="Triglyceride_Level">Triglyceride Level</label>
+                <input type="number" class="input" name="Triglyceride_Level" required>
+            </div>
+
+            <div class="inputfield">
+                <label for="Fasting_Blood_Sugar">Fasting Blood Sugar</label>
+                <input type="number" class="input" name="Fasting_Blood_Sugar" required>
+            </div>
+
+            <div class="inputfield">
+                <label for="CRP_Level">CRP Level</label>
+                <input type="number" step="0.01" class="input" name="CRP_Level" required>
+            </div>
+
+            <div class="inputfield">
+                <label for="Homocysteine_Level">Homocysteine Level</label>
+                <input type="number" class="input" name="Homocysteine_Level" required>
+            </div>
+
+           <div class="inputfield">
+    <label for="Gender">Gender</label>
+    <select name="Gender" required>
+        <option value="" disabled selected>Select Gender</option>
+        <option value="1">Male</option>
+        <option value="0">Female</option>
+    </select>
+</div>
+
+<div class="inputfield">
+    <label for="Smoking">Smoking</label>
+    <select name="Smoking" required>
+        <option value="" disabled selected>Select Smoking</option>
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+    </select>
+</div>
+
+<div class="inputfield">
+    <label for="Family_Heart_Disease">Family Heart Disease</label>
+    <select name="Family_Heart_Disease" required>
+        <option value="" disabled selected>Select Option</option>
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+    </select>
+</div>
+
+<div class="inputfield">
+    <label for="Diabetes">Diabetes</label>
+    <select name="Diabetes" required>
+        <option value="" disabled selected>Select Option</option>
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+    </select>
+</div>
+
+<div class="inputfield">
+    <label for="High_Blood_Pressure">High Blood Pressure</label>
+    <select name="High_Blood_Pressure" required>
+        <option value="" disabled selected>Select Option</option>
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+    </select>
+</div>
+
+<div class="inputfield">
+    <label for="Low_HDL_Cholesterol">Low HDL Cholesterol</label>
+    <select name="Low_HDL_Cholesterol" required>
+        <option value="" disabled selected>Select Option</option>
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+    </select>
+</div>
+
+<div class="inputfield">
+    <label for="High_LDL_Cholesterol">High LDL Cholesterol</label>
+    <select name="High_LDL_Cholesterol" required>
+        <option value="" disabled selected>Select Option</option>
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+    </select>
+</div>
+
+<div class="inputfield">
+    <label for="Exercise_Habits">Exercise Habits</label>
+    <select name="Exercise_Habits" required>
+        <option value="" disabled selected>Select Exercise Level</option>
+        <option value="3">High</option>
+        <option value="2">Medium</option>
+        <option value="1">Low</option>
+        <option value="0">None</option>
+    </select>
+</div>
+
+<div class="inputfield">
+    <label for="Alcohol_Consumption">Alcohol Consumption</label>
+    <select name="Alcohol_Consumption" required>
+        <option value="" disabled selected>Select Alcohol Level</option>
+        <option value="3">High</option>
+        <option value="2">Medium</option>
+        <option value="1">Low</option>
+        <option value="0">None</option>
+    </select>
+</div>
+
+<div class="inputfield">
+    <label for="Stress_Level">Stress Level</label>
+    <select name="Stress_Level" required>
+        <option value="" disabled selected>Select Stress Level</option>
+        <option value="3">High</option>
+        <option value="2">Medium</option>
+        <option value="1">Low</option>
+        <option value="0">None</option>
+    </select>
+</div>
+
+<div class="inputfield">
+    <label for="Sugar_Consumption">Sugar Consumption</label>
+    <select name="Sugar_Consumption" required>
+        <option value="" disabled selected>Select Sugar Level</option>
+        <option value="3">High</option>
+        <option value="2">Medium</option>
+        <option value="1">Low</option>
+        <option value="0">None</option>
+    </select>
+</div>
+
+
+            <br>
+            <button type="submit">Predict</button>
+
+        </form>
+    </div>
+</body>
+</html>
