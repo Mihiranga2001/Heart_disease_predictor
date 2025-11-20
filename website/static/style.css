@@ -1,84 +1,96 @@
-/* General body settings */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f2f6fc;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Wrapper around the form */
+body {
+    background: #f2f2f2;
+    padding: 20px;
+}
+
 .wrapper {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 30px;
+    max-width: 500px;
+    width: 100%;
     background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    margin: 0 auto;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+    padding: 30px;
+    border-radius: 10px;
 }
 
-/* Title */
 .title {
     font-size: 28px;
     font-weight: 700;
+    margin-bottom: 25px;
+    color: #333;
+    text-transform: uppercase;
     text-align: center;
-    margin-bottom: 30px;
-    color: #2c3e50;
 }
 
-/* Input field containers */
 .inputfield {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     display: flex;
     flex-direction: column;
 }
 
-/* Labels */
 .inputfield label {
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: #34495e;
+    color: #333;
+    font-size: 14px;
+    margin-bottom: 5px;
 }
 
-/* Inputs and dropdowns */
-.inputfield input,
+.inputfield .input,
 .inputfield select {
-    padding: 10px 15px;
-    border: 1px solid #ccd1d9;
+    width: 100%;
+    border: 1px solid #aaa;
+    padding: 8px 10px;
+    font-size: 14px;
+    border-radius: 6px;
+    outline: none;
+}
+
+.inputfield .input:focus,
+.inputfield select:focus {
+    border-color: #007bff;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
     border-radius: 6px;
     font-size: 16px;
-    outline: none;
-    transition: all 0.3s ease;
-}
-
-.inputfield input:focus,
-.inputfield select:focus {
-    border-color: #3498db;
-    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
-}
-
-/* Submit button */
-button[type="submit"] {
-    width: 100%;
-    padding: 12px;
-    background-color: #3498db;
-    border: none;
-    border-radius: 8px;
-    color: #fff;
-    font-size: 18px;
-    font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
+    margin-top: 10px;
 }
 
-button[type="submit"]:hover {
-    background-color: #2980b9;
-    transform: translateY(-2px);
+button:hover {
+    background: #0056b3;
 }
 
-/* Responsive adjustments */
-@media (max-width: 650px) {
-    .wrapper {
-        margin: 20px;
-        padding: 20px;
-    }
+/* RESULT COLORS */
+.positive {
+    color: red;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.negative {
+    color: green;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+p {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
 }
