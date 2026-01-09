@@ -12,182 +12,185 @@
         <div class="title">
             Heart Disease Predictor
         </div>
+
+        {% if error_msg %}
+            <p style="color:red;">Error: {{ error_msg }}</p>
+        {% endif %}
+
         <form action="/" method="POST">
-            
-            <!-- Numeric fields -->
+
             <div class="inputfield">
                 <label for="Age">Age</label>
-                <input type="number" class="input" name="Age" required>
+                <input type="number" class="input" name="Age" id="Age" required>
             </div>
 
             <div class="inputfield">
-    <label for="Gender">Gender</label>
-    <select name="Gender" required>
-        <option value="" disabled selected>Select Gender</option>
-        <option value="1">Male</option>
-        <option value="0">Female</option>
-    </select>
-</div>
+                <label for="Gender">Gender</label>
+                <select name="Gender" id="Gender" required>
+                    <option value="" disabled selected>Select Gender</option>
+                    <option value="1">Male</option>
+                    <option value="0">Female</option>
+                </select>
+            </div>
 
             <div class="inputfield">
                 <label for="Blood_Pressure">Blood Pressure</label>
-                <input type="text" class="input" name="Blood_Pressure" required>
+                <input type="text" class="input" name="Blood_Pressure" id="Blood_Pressure" required>
             </div>
 
             <div class="inputfield">
                 <label for="Cholesterol_Level">Cholesterol Level</label>
-                <input type="text" class="input" name="Cholesterol_Level" required>
+                <input type="text" class="input" name="Cholesterol_Level" id="Cholesterol_Level" required>
             </div>
 
             <div class="inputfield">
-    <label for="Exercise_Habits">Exercise Habits</label>
-    <select name="Exercise_Habits" required>
-        <option value="" disabled selected>Select Exercise Level</option>
-        <option value="3">High</option>
-        <option value="2">Medium</option>
-        <option value="1">Low</option>
-        <option value="0">None</option>
-    </select>
-</div>
+                <label for="Exercise_Habits">Exercise Habits</label>
+                <select name="Exercise_Habits" id="Exercise_Habits" required>
+                    <option value="" disabled selected>Select Exercise Level</option>
+                    <option value="3">High</option>
+                    <option value="2">Medium</option>
+                    <option value="1">Low</option>
+                    <option value="0">None</option>
+                </select>
+            </div>
 
-<div class="inputfield">
-    <label for="Smoking">Smoking</label>
-    <select name="Smoking" required>
-        <option value="" disabled selected>Select Smoking</option>
-        <option value="1">Yes</option>
-        <option value="0">No</option>
-    </select>
-</div>
+            <div class="inputfield">
+                <label for="Smoking">Smoking</label>
+                <select name="Smoking" id="Smoking" required>
+                    <option value="" disabled selected>Select Smoking</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
 
-<div class="inputfield">
-    <label for="Family_Heart_Disease">Family Heart Disease</label>
-    <select name="Family_Heart_Disease" required>
-        <option value="" disabled selected>Select Option</option>
-        <option value="1">Yes</option>
-        <option value="0">No</option>
-    </select>
-</div>
+            <div class="inputfield">
+                <label for="Family_Heart_Disease">Family Heart Disease</label>
+                <select name="Family_Heart_Disease" id="Family_Heart_Disease" required>
+                    <option value="" disabled selected>Select Option</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
 
-<div class="inputfield">
-    <label for="Diabetes">Diabetes</label>
-    <select name="Diabetes" required>
-        <option value="" disabled selected>Select Option</option>
-        <option value="1">Yes</option>
-        <option value="0">No</option>
-    </select>
-</div>
+            <div class="inputfield">
+                <label for="Diabetes">Diabetes</label>
+                <select name="Diabetes" id="Diabetes" required>
+                    <option value="" disabled selected>Select Option</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
 
             <div class="inputfield">
                 <label for="BMI">BMI</label>
-                <input type="text" class="input" name="BMI" required>
+                <input type="text" class="input" name="BMI" id="BMI" required>
             </div>
 
             <div class="inputfield">
-    <label for="High_Blood_Pressure">High Blood Pressure</label>
-    <select name="High_Blood_Pressure" required>
-        <option value="" disabled selected>Select Option</option>
-        <option value="1">Yes</option>
-        <option value="0">No</option>
-    </select>
-</div>
+                <label for="High_Blood_Pressure">High Blood Pressure</label>
+                <select name="High_Blood_Pressure" id="High_Blood_Pressure" required>
+                    <option value="" disabled selected>Select Option</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
 
-<div class="inputfield">
-    <label for="Low_HDL_Cholesterol">Low HDL Cholesterol</label>
-    <select name="Low_HDL_Cholesterol" required>
-        <option value="" disabled selected>Select Option</option>
-        <option value="1">Yes</option>
-        <option value="0">No</option>
-    </select>
-</div>
+            <div class="inputfield">
+                <label for="Low_HDL_Cholesterol">Low HDL Cholesterol</label>
+                <select name="Low_HDL_Cholesterol" id="Low_HDL_Cholesterol" required>
+                    <option value="" disabled selected>Select Option</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
 
-<div class="inputfield">
-    <label for="High_LDL_Cholesterol">High LDL Cholesterol</label>
-    <select name="High_LDL_Cholesterol" required>
-        <option value="" disabled selected>Select Option</option>
-        <option value="1">Yes</option>
-        <option value="0">No</option>
-    </select>
-</div>
+            <div class="inputfield">
+                <label for="High_LDL_Cholesterol">High LDL Cholesterol</label>
+                <select name="High_LDL_Cholesterol" id="High_LDL_Cholesterol" required>
+                    <option value="" disabled selected>Select Option</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
 
+            <div class="inputfield">
+                <label for="Alcohol_Consumption">Alcohol Consumption</label>
+                <select name="Alcohol_Consumption" id="Alcohol_Consumption" required>
+                    <option value="" disabled selected>Select Alcohol Level</option>
+                    <option value="3">High</option>
+                    <option value="2">Medium</option>
+                    <option value="1">Low</option>
+                    <option value="0">None</option>
+                </select>
+            </div>
 
-
-<div class="inputfield">
-    <label for="Alcohol_Consumption">Alcohol Consumption</label>
-    <select name="Alcohol_Consumption" required>
-        <option value="" disabled selected>Select Alcohol Level</option>
-        <option value="3">High</option>
-        <option value="2">Medium</option>
-        <option value="1">Low</option>
-        <option value="0">None</option>
-    </select>
-</div>
-
-<div class="inputfield">
-    <label for="Stress_Level">Stress Level</label>
-    <select name="Stress_Level" required>
-        <option value="" disabled selected>Select Stress Level</option>
-        <option value="3">High</option>
-        <option value="2">Medium</option>
-        <option value="1">Low</option>
-        <option value="0">None</option>
-    </select>
-</div>
+            <div class="inputfield">
+                <label for="Stress_Level">Stress Level</label>
+                <select name="Stress_Level" id="Stress_Level" required>
+                    <option value="" disabled selected>Select Stress Level</option>
+                    <option value="3">High</option>
+                    <option value="2">Medium</option>
+                    <option value="1">Low</option>
+                    <option value="0">None</option>
+                </select>
+            </div>
 
             <div class="inputfield">
                 <label for="Sleep_Hours">Sleep Hours</label>
-                <input type="text" class="input" name="Sleep_Hours" required>
+                <input type="text" class="input" name="Sleep_Hours" id="Sleep_Hours" required>
             </div>
 
             <div class="inputfield">
-    <label for="Sugar_Consumption">Sugar Consumption</label>
-    <select name="Sugar_Consumption" required>
-        <option value="" disabled selected>Select Sugar Level</option>
-        <option value="3">High</option>
-        <option value="2">Medium</option>
-        <option value="1">Low</option>
-        <option value="0">None</option>
-    </select>
-</div>
+                <label for="Sugar_Consumption">Sugar Consumption</label>
+                <select name="Sugar_Consumption" id="Sugar_Consumption" required>
+                    <option value="" disabled selected>Select Sugar Level</option>
+                    <option value="3">High</option>
+                    <option value="2">Medium</option>
+                    <option value="1">Low</option>
+                    <option value="0">None</option>
+                </select>
+            </div>
 
             <div class="inputfield">
                 <label for="Triglyceride_Level">Triglyceride Level</label>
-                <input type="text" class="input" name="Triglyceride_Level" required>
+                <input type="text" class="input" name="Triglyceride_Level" id="Triglyceride_Level" required>
             </div>
 
             <div class="inputfield">
                 <label for="Fasting_Blood_Sugar">Fasting Blood Sugar</label>
-                <input type="text" class="input" name="Fasting_Blood_Sugar" required>
+                <input type="text" class="input" name="Fasting_Blood_Sugar" id="Fasting_Blood_Sugar" required>
             </div>
 
             <div class="inputfield">
                 <label for="CRP_Level">CRP Level</label>
-                <input type="text" step="0.01" class="input" name="CRP_Level" required>
+                <input type="text" step="0.01" class="input" name="CRP_Level" id="CRP_Level" required>
             </div>
 
             <div class="inputfield">
                 <label for="Homocysteine_Level">Homocysteine Level</label>
-                <input type="text" class="input" name="Homocysteine_Level" required>
+                <input type="text" class="input" name="Homocysteine_Level" id="Homocysteine_Level" required>
             </div>
 
             <br>
             <button type="submit">Predict</button>
-
         </form>
+
         {% if pred is not none %}
-<div class="result-container">
-    <p class="result-box 
-        {% if pred[0] == 0 %} positive 
-        {% elif pred[0] == 1 %} negative 
-        {% endif %}">
-        
-        {% if pred[0] == 0 %}
-        Negative ❌
-        {% elif pred[0] == 1 %}
-        Positive ✅
+        <div class="result-container">
+            <p class="result-box 
+                {% if pred == 0 %} positive 
+                {% elif pred == 1 %} negative 
+                {% endif %}">
+                
+                {% if pred == 0 %}
+                Negative ❌
+                {% elif pred == 1 %}
+                Positive ✅
+                {% endif %}
+            </p>
+        </div>
         {% endif %}
-    </p>
-</div>
-{% endif %}
+
     </div>
 </body>
 </html>
