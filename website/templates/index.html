@@ -21,6 +21,15 @@
             </div>
 
             <div class="inputfield">
+    <label for="Gender">Gender</label>
+    <select name="Gender" required>
+        <option value="" disabled selected>Select Gender</option>
+        <option value="1">Male</option>
+        <option value="0">Female</option>
+    </select>
+</div>
+
+            <div class="inputfield">
                 <label for="Blood_Pressure">Blood Pressure</label>
                 <input type="text" class="input" name="Blood_Pressure" required>
             </div>
@@ -31,41 +40,13 @@
             </div>
 
             <div class="inputfield">
-                <label for="BMI">BMI</label>
-                <input type="text" class="input" name="BMI" required>
-            </div>
-
-            <div class="inputfield">
-                <label for="Sleep_Hours">Sleep Hours</label>
-                <input type="text" class="input" name="Sleep_Hours" required>
-            </div>
-
-            <div class="inputfield">
-                <label for="Triglyceride_Level">Triglyceride Level</label>
-                <input type="text" class="input" name="Triglyceride_Level" required>
-            </div>
-
-            <div class="inputfield">
-                <label for="Fasting_Blood_Sugar">Fasting Blood Sugar</label>
-                <input type="text" class="input" name="Fasting_Blood_Sugar" required>
-            </div>
-
-            <div class="inputfield">
-                <label for="CRP_Level">CRP Level</label>
-                <input type="text" step="0.01" class="input" name="CRP_Level" required>
-            </div>
-
-            <div class="inputfield">
-                <label for="Homocysteine_Level">Homocysteine Level</label>
-                <input type="text" class="input" name="Homocysteine_Level" required>
-            </div>
-
-           <div class="inputfield">
-    <label for="Gender">Gender</label>
-    <select name="Gender" required>
-        <option value="" disabled selected>Select Gender</option>
-        <option value="1">Male</option>
-        <option value="0">Female</option>
+    <label for="Exercise_Habits">Exercise Habits</label>
+    <select name="Exercise_Habits" required>
+        <option value="" disabled selected>Select Exercise Level</option>
+        <option value="3">High</option>
+        <option value="2">Medium</option>
+        <option value="1">Low</option>
+        <option value="0">None</option>
     </select>
 </div>
 
@@ -96,7 +77,12 @@
     </select>
 </div>
 
-<div class="inputfield">
+            <div class="inputfield">
+                <label for="BMI">BMI</label>
+                <input type="text" class="input" name="BMI" required>
+            </div>
+
+            <div class="inputfield">
     <label for="High_Blood_Pressure">High Blood Pressure</label>
     <select name="High_Blood_Pressure" required>
         <option value="" disabled selected>Select Option</option>
@@ -123,16 +109,7 @@
     </select>
 </div>
 
-<div class="inputfield">
-    <label for="Exercise_Habits">Exercise Habits</label>
-    <select name="Exercise_Habits" required>
-        <option value="" disabled selected>Select Exercise Level</option>
-        <option value="3">High</option>
-        <option value="2">Medium</option>
-        <option value="1">Low</option>
-        <option value="0">None</option>
-    </select>
-</div>
+
 
 <div class="inputfield">
     <label for="Alcohol_Consumption">Alcohol Consumption</label>
@@ -156,7 +133,12 @@
     </select>
 </div>
 
-<div class="inputfield">
+            <div class="inputfield">
+                <label for="Sleep_Hours">Sleep Hours</label>
+                <input type="text" class="input" name="Sleep_Hours" required>
+            </div>
+
+            <div class="inputfield">
     <label for="Sugar_Consumption">Sugar Consumption</label>
     <select name="Sugar_Consumption" required>
         <option value="" disabled selected>Select Sugar Level</option>
@@ -166,24 +148,46 @@
         <option value="0">None</option>
     </select>
 </div>
+
+            <div class="inputfield">
+                <label for="Triglyceride_Level">Triglyceride Level</label>
+                <input type="text" class="input" name="Triglyceride_Level" required>
+            </div>
+
+            <div class="inputfield">
+                <label for="Fasting_Blood_Sugar">Fasting Blood Sugar</label>
+                <input type="text" class="input" name="Fasting_Blood_Sugar" required>
+            </div>
+
+            <div class="inputfield">
+                <label for="CRP_Level">CRP Level</label>
+                <input type="text" step="0.01" class="input" name="CRP_Level" required>
+            </div>
+
+            <div class="inputfield">
+                <label for="Homocysteine_Level">Homocysteine Level</label>
+                <input type="text" class="input" name="Homocysteine_Level" required>
+            </div>
+
             <br>
             <button type="submit">Predict</button>
 
         </form>
-        <div class="result-container">
+        {% if pred is not none %}
+<div class="result-container">
     <p class="result-box 
         {% if pred[0] == 0 %} positive 
         {% elif pred[0] == 1 %} negative 
         {% endif %}">
+        
         {% if pred[0] == 0 %}
-        Positive ✅
-        {% elif pred[0] == 1 %}
         Negative ❌
-        {% else %}
-        Prediction not available
+        {% elif pred[0] == 1 %}
+        Positive ✅
         {% endif %}
     </p>
 </div>
+{% endif %}
     </div>
 </body>
 </html>
