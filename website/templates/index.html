@@ -176,19 +176,20 @@
         </form>
 
         {% if pred is not none %}
-        <div class="result-container">
-            <p class="result-box 
-                {% if pred == 0 %} positive 
-                {% elif pred == 1 %} negative 
-                {% endif %}">
-                
-                {% if pred == 0 %}
-                Negative ❌
-                {% elif pred == 1 %}
-                Positive ✅
-                {% endif %}
-            </p>
-        </div>
+            <div class="result-container">
+
+            {% if pred == 0 %}
+                <p class="result-box positive">
+                    No Heart Disease Detected ✅
+                </p>
+
+            {% elif pred == 1 %}
+                <p class="result-box negative">
+                Heart Disease Risk Detected ⚠️
+                </p>
+            {% endif %}
+
+            </div>
         {% endif %}
 
     </div>
