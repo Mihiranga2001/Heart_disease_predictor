@@ -5,107 +5,164 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;   /* Non-scrolling page */
+}
+
 body {
     min-height: 100vh;
-    background: linear-gradient(135deg, #e3f2fd, #f8fbff);
-    padding: 30px;
+    background: linear-gradient(135deg, #eef3ff, #f8fbff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
 }
 
+/* Main container */
 .wrapper {
-    max-width: 1100px;
     width: 100%;
+    max-width: 1120px;
+    height: calc(100vh - 28px);
     background: #ffffff;
-    margin: 0 auto;
-    padding: 35px 45px;
     border-radius: 18px;
-    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    box-shadow: 0 18px 45px rgba(20, 25, 60, 0.18);
 }
 
+/* Header title area */
 .title {
-    font-size: 32px;
+    width: 100%;
+    padding: 24px 36px 20px;
+    background: linear-gradient(135deg, #181b36, #142c55);
+    color: #ffffff;
+    font-size: 30px;
     font-weight: 800;
-    margin-bottom: 35px;
-    color: #0d47a1;
-    text-transform: uppercase;
-    text-align: center;
-    letter-spacing: 1px;
+    text-align: left;
+    letter-spacing: 0.3px;
+    text-transform: capitalize;
+    position: relative;
 }
 
+.title::after {
+    content: "Clinical prediction model • Fill in all patient parameters";
+    display: block;
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #bfc8d8;
+}
+
+/* Form layout */
 form {
+    height: calc(100% - 96px);
+    padding: 22px 38px 18px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 32px;
-    row-gap: 18px;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 22px;
+    row-gap: 13px;
+    align-content: start;
 }
 
+/* Input group */
 .inputfield {
     display: flex;
     flex-direction: column;
 }
 
+/* Labels */
 .inputfield label {
-    color: #222;
-    font-size: 15px;
+    color: #5d6470;
+    font-size: 13px;
     font-weight: 700;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
+/* Inputs and dropdowns */
 .inputfield .input,
 .inputfield select {
     width: 100%;
-    height: 48px;
-    border: 1px solid #cfd8dc;
-    padding: 10px 14px;
+    height: 44px;
+    border: none;
+    padding: 9px 14px;
     font-size: 15px;
-    border-radius: 9px;
+    border-radius: 7px;
     outline: none;
-    background: #fafafa;
+    background: #2d2d2a;
+    color: #ffffff;
     transition: all 0.25s ease;
+}
+
+.inputfield .input::placeholder {
+    color: #8f8f8f;
+}
+
+.inputfield select {
+    cursor: pointer;
 }
 
 .inputfield .input:focus,
 .inputfield select:focus {
-    border-color: #1976d2;
-    background: #ffffff;
-    box-shadow: 0 0 0 4px rgba(25, 118, 210, 0.12);
+    background: #252525;
+    box-shadow: 0 0 0 3px rgba(64, 93, 230, 0.18);
 }
 
+/* Make some wider fields look balanced */
+.inputfield:nth-child(5),
+.inputfield:nth-child(6),
+.inputfield:nth-child(7),
+.inputfield:nth-child(8),
+.inputfield:nth-child(9),
+.inputfield:nth-child(10),
+.inputfield:nth-child(11),
+.inputfield:nth-child(12),
+.inputfield:nth-child(13),
+.inputfield:nth-child(14),
+.inputfield:nth-child(15),
+.inputfield:nth-child(16) {
+    min-width: 0;
+}
+
+/* Button */
 button {
     grid-column: 1 / -1;
-    width: 100%;
-    padding: 15px;
-    background: #1976d2;
+    height: 46px;
+    background: linear-gradient(135deg, #2337d6, #4c5cff);
     color: white;
     border: none;
     border-radius: 9px;
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 17px;
+    font-weight: 800;
     cursor: pointer;
-    margin-top: 25px;
+    margin-top: 4px;
     transition: all 0.25s ease;
 }
 
 button:hover {
-    background: #0d47a1;
-    transform: translateY(-2px);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(35, 55, 214, 0.28);
 }
 
+/* Result section */
 .result-container {
-    margin-top: 30px;
+    grid-column: 1 / -1;
     text-align: center;
+    margin-top: 2px;
 }
 
 .result-box {
     display: inline-block;
-    padding: 15px 35px;
+    padding: 10px 28px;
     border-radius: 12px;
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 800;
 }
 
 /* No Heart Disease */
 .positive {
-    color: #2e7d32;
+    color: #1b7f3a;
     background: #e8f5e9;
     border: 1px solid #81c784;
 }
@@ -118,44 +175,80 @@ button:hover {
 }
 
 p {
+    grid-column: 1 / -1;
     text-align: center;
-    font-size: 18px;
-    margin-top: 20px;
+    font-size: 16px;
+    margin-top: 4px;
+    color: #444;
 }
 
-/* Tablet */
-@media (max-width: 900px) {
-    .wrapper {
-        padding: 30px;
-    }
-
+/* Medium screens */
+@media (max-width: 1000px) {
     form {
-        column-gap: 22px;
-    }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-    body {
-        padding: 15px;
-    }
-
-    .wrapper {
-        padding: 25px 20px;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 18px 28px;
+        column-gap: 18px;
+        row-gap: 11px;
     }
 
     .title {
-        font-size: 24px;
-        margin-bottom: 25px;
+        font-size: 26px;
+        padding: 22px 30px 18px;
+    }
+
+    .inputfield .input,
+    .inputfield select {
+        height: 41px;
+        font-size: 14px;
+    }
+}
+
+/* Small screens */
+@media (max-width: 768px) {
+    body {
+        padding: 8px;
+    }
+
+    .wrapper {
+        height: calc(100vh - 16px);
+        border-radius: 14px;
+    }
+
+    .title {
+        font-size: 22px;
+        padding: 18px 22px 15px;
+    }
+
+    .title::after {
+        font-size: 12px;
     }
 
     form {
-        grid-template-columns: 1fr;
-        row-gap: 16px;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 15px 18px;
+        column-gap: 12px;
+        row-gap: 9px;
+    }
+
+    .inputfield label {
+        font-size: 12px;
+        margin-bottom: 4px;
+    }
+
+    .inputfield .input,
+    .inputfield select {
+        height: 38px;
+        font-size: 13px;
+        padding: 7px 10px;
     }
 
     button {
-        grid-column: 1;
-        font-size: 16px;
+        height: 40px;
+        font-size: 15px;
+    }
+
+    .result-box {
+        font-size: 18px;
+        padding: 8px 20px;
     }
 }
