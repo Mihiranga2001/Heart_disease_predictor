@@ -247,8 +247,35 @@ p {
         font-size: 15px;
     }
 
-    .result-box {
-        font-size: 18px;
-        padding: 8px 20px;
-    }
+    .result-container {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 4px;
+}
+
+.result-box {
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.positive {
+    color: #1b7f3a;
+    background: #e8f5e9;
+    border: 1px solid #81c784;
+}
+
+.negative {
+    color: #c62828;
+    background: #ffebee;
+    border: 1px solid #ef9a9a;
+}
+
+.error {
+    color: #c62828;
+    background: #fff3f3;
+    border: 1px solid #ef9a9a;
+}
 }
