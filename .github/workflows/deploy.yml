@@ -6,8 +6,8 @@ on:
       - main
 
 env:
-  IMAGE_NAME: heart-disease-predictor
-  CONTAINER_NAME: heart-disease-predictor
+  IMAGE_NAME: heart_disease_app
+  CONTAINER_NAME: heart_disease_app
 
 jobs:
   build-push-deploy:
@@ -56,4 +56,4 @@ jobs:
               -p 80:5000 \
               ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest
 
-            docker ps
+            sudo docker ps
