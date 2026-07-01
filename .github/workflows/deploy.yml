@@ -7,14 +7,12 @@ on:
 
 env:
   IMAGE_NAME: heart_disease_app
-  CONTAINER_NAME: heart_disease_app
+  CONTAINER_NAME: heart-disease-app
 
 jobs:
   build-push-deploy:
     name: Build, Push and Deploy
     runs-on: ubuntu-latest
-
-    environment: production
 
     steps:
       - name: Checkout repository
@@ -38,19 +36,19 @@ jobs:
             ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest
             ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
 
-      - name: Deploy to server using SSH
+      - name: Deploy to EC2 using SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
-            docker pull ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest
+            sudo docker pull ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest
 
-            docker stop ${{ env.CONTAINER_NAME }} || true
-            docker rm ${{ env.CONTAINER_NAME }} || true
+            sudo docker stop ${{ env.CONTAINER_NAME }} || true
+            sudo docker rm ${{ env.CONTAINER_NAME }} || true
 
-            docker run -d \
+            sudo docker run -d \
               --name ${{ env.CONTAINER_NAME }} \
               --restart always \
               -p 80:5000 \
