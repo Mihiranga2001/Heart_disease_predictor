@@ -51,7 +51,12 @@ jobs:
             sudo docker run -d \
               --name ${{ env.CONTAINER_NAME }} \
               --restart always \
-              -p 80:5000 \
+              -p 127.0.0.1:5000:5000 \
               ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest
 
             sudo docker ps
+
+            curl -f http://127.0.0.1:5000 || exit 1
+
+            sudo nginx -t
+            sudo systemctl reload nginx
